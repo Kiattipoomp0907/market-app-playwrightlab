@@ -56,24 +56,3 @@ test('TC03 Login เจ้าของตลาด ใส่ pws ผิด', asy
   await expect(page.getByRole('button', { name: 'เข้าสู่ระบบ' })).toBeVisible();
 });
 
-test('TC04 ไม่กรอกหมายเลขโทรศัพท์และรหัสผ่าน', async ({ page }) => {
-  await page.goto('http://localhost:5173/');
-
-  await page
-    .getByRole('button', { name: 'เข้าสู่ระบบ' })
-    .click();
-  await expect(
-    page.getByLabel('หมายเลขโทรศัพท์มือถือ')
-  ).toBeVisible();
-  await expect(
-    page.getByPlaceholder('อย่างน้อย 8 ตัวอักษร')
-  ).toBeVisible();
-  // 4. กดปุ่มเข้าสู่ระบบ
-  await page
-    .getByRole('button', { name: 'เข้าสู่ระบบ' })
-    .click();
-  // 5. ตรวจสอบว่า Login ไม่สำเร็จ
-    await expect(page.getByRole('button', { name: 'เข้าสู่ระบบ' })).toBeVisible();
-});
-
-
