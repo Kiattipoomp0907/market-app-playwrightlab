@@ -34,7 +34,7 @@ test('TC02 Login เจ้าของตลาด ใส่เบอร์โ�
     .getByRole('button', { name: 'เข้าสู่ระบบ' })
     .click();
   // 5. ตรวจสอบว่า Login ไม่สำเร็จ
-  await expect(page.getByText('ยินดีต้อนรับ')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'เข้าสู่ระบบ' })).toBeVisible();
 });
 
 test('TC03 Login เจ้าของตลาด ใส่ pws ผิด', async ({ page }) => {
@@ -53,7 +53,7 @@ test('TC03 Login เจ้าของตลาด ใส่ pws ผิด', asy
     .getByRole('button', { name: 'เข้าสู่ระบบ' })
     .click();
   // 5. ตรวจสอบว่า Login ไม่สำเร็จ
-  await expect(page.getByText('ยินดีต้อนรับ')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'เข้าสู่ระบบ' })).toBeVisible();
 });
 
 test('TC04 ไม่กรอกหมายเลขโทรศัพท์และรหัสผ่าน', async ({ page }) => {
@@ -73,6 +73,7 @@ test('TC04 ไม่กรอกหมายเลขโทรศัพท์แ
     .getByRole('button', { name: 'เข้าสู่ระบบ' })
     .click();
   // 5. ตรวจสอบว่า Login ไม่สำเร็จ
-  await expect(page.getByText('ยินดีต้อนรับ')).toBeVisible();
-
+    await expect(page.getByRole('button', { name: 'เข้าสู่ระบบ' })).toBeVisible();
 });
+
+
